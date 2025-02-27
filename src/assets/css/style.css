@@ -1,0 +1,272 @@
+:root {
+
+    /* Primary */
+    --pr-purple: hsl(259, 100%, 65%);
+    --pr-light-red: hsl(0, 100%, 67%);
+    /* Neutral */
+
+    --ne-light-grey: hsl(0, 0%, 86%);
+    --ne-smokey-grey: hsl(0, 1%, 44%);
+    --ne-off-white: hsl(0, 0%, 94%);
+    --white: hsl(0, 0%, 100%);
+    --off-black: hsl(0, 0%, 8%);
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+    --fw-extra-bold: 800;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    color: var(--off-black);
+    background-color: var(--ne-off-white);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+.attribution {
+    padding: 1rem;
+    color: var(--off-black);
+    font-size: 0.875rem;
+    text-align: center;
+    -webkit-animation: fade-in 500ms ease-in;
+    animation: fade-in 500ms ease-in;
+}
+
+.attribution a {
+    color: inherit;
+}
+
+.app-container {
+    width: 844px;
+    height: 648px;
+    padding: 3.4375rem;
+    border-radius: 32px;
+    border-bottom-right-radius: 150px;
+    background-color: var(--white);
+    -webkit-user-select: none;
+    user-select: none;
+    /* -webkit-animation: fade-in 400ms ease-in;
+    animation: fade-in 400ms ease-in; */
+}
+
+.input-container {
+    position: relative;
+    border-bottom: 1px solid var(--ne-light-grey);
+    padding: 0px;
+}
+
+.input-container .row > div {
+    padding: 0px;
+    padding-right: 2rem;
+    padding-bottom: 2.5rem;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--ne-smokey-grey);
+    font-size: 1rem;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+}
+
+.input-control {
+    width: 100%;
+    height: auto;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--ne-light-grey);
+    border-radius: 8px;
+    font-size: 2rem;
+    font-weight: var(--fw-extra-bold);
+    cursor: pointer;
+}
+
+.input-control::placeholder {
+    color: var(--ne-smokey-grey);
+}
+
+.input-control:is(:hover, :focus-visible) {
+    outline: transparent;
+    border-color: var(--pr-purple);
+}
+
+.btn-cal {
+    position: absolute;
+    right: 0;
+    bottom: calc(-95px / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95px;
+    height: 95px;
+    border: transparent;
+    border-radius: 50%;
+    background-color: var(--pr-purple);
+    cursor: pointer;
+}
+
+.btn-cal:is(:hover, :focus-visible) {
+    outline: transparent;
+    background-color: var(--off-black);
+}
+
+.color-error {
+    color: var(--pr-light-red);
+}
+
+.border-error,
+.border-error:is(:hover, :focus-visible) {
+    border-color: var(--pr-light-red);
+}
+
+.error-message {
+    display: block;
+    padding: 0.5rem 0rem;
+    color: var(--pr-light-red);
+    font-size: 0.875rem;
+    font-style: italic;
+}
+
+.input-group:has(input[id=birthDay]:valid) .color-error,
+.input-group:has(input[id=birthMonth]:valid) .color-error ,
+.input-group:has(input[id=birthYear]:valid) .color-error {
+    color: var(--ne-smokey-grey);
+}
+
+input[id=birthDay]:valid ,
+input[id=birthMonth]:valid ,
+input[id=birthYear]:valid {
+    border-color: var(--ne-light-grey) ;
+}
+
+input[id=birthDay]:valid + .error-message ,
+input[id=birthMonth]:valid + .error-message ,
+input[id=birthYear]:valid + .error-message {
+    display: none;
+}
+
+.output-container {
+    padding: 2.5rem 0rem 0rem;
+}
+
+.output-container > p {
+    font-size: 7rem;
+    font-style: italic;
+    font-weight: var(--fw-extra-bold);
+    line-height: 1.1;
+}
+
+.output-container > p > span {
+    color: var(--pr-purple);
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 991px) {}
+
+
+@media only screen and (max-width: 677px) {
+
+    body {
+        padding: 0.7rem;
+    }
+
+    .app-container {
+        width: 100%;
+        height: auto;
+        padding: 1.5rem;
+        border-bottom-right-radius: 130px;
+    }
+
+    .input-container .row > div {
+        padding-right: 1rem;
+        padding-bottom: 1.8rem;
+    }
+
+    .input-container .row > div:nth-child(3) {
+        padding-right: 0rem;
+    }
+
+    .input-label {
+        font-size: 0.875rem;
+    }
+
+    .input-control {
+        padding: 0.8rem 0.8rem;
+        font-size: 1.375rem;
+    }
+
+    .btn-cal {
+        position: absolute;
+        right: calc(80% / 2);
+        bottom: calc(-64px / 2);
+        width: 64px;
+        height: 64px;
+    }
+
+    .output-container > p {
+        font-size: 3.5rem;
+    }
+}

@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './assets/css/fonts.css';
+import 'bootstrap/dist/css/bootstrap-grid.css';
+import './assets/css/style.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Footer from './Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const footer = ReactDOM.createRoot(document.getElementById('footer'));
 root.render(
   <React.StrictMode>
     <App />
+  </React.StrictMode>
+);
+
+
+footer.render (
+  <React.StrictMode>
+    <Footer/>
   </React.StrictMode>
 );
 
