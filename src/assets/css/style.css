@@ -99,8 +99,8 @@ p, h1, h2, h3, h4, h5, h6 {
     background-color: var(--white);
     -webkit-user-select: none;
     user-select: none;
-    /* -webkit-animation: fade-in 400ms ease-in;
-    animation: fade-in 400ms ease-in; */
+    -webkit-animation: fade-in 400ms ease-in;
+    animation: fade-in 400ms ease-in;
 }
 
 .input-container {
